@@ -16,10 +16,6 @@ jobs:
         build:
           - { "cmd": "./build-latest.sh", "branch": "release" }
           - { "cmd": "./build.sh main", "branch": "release" }
-          # Build pre release images from our develop branch
-          # This is used to test the latest changes before they are merged into the main branch
-          - { "cmd": "PRERELEASE=true ./build-latest.sh", "branch": "develop" }
-          - { "cmd": "./build.sh feature", "branch": "develop" }
         platform:
           - linux/amd64,linux/arm64
       fail-fast: false
